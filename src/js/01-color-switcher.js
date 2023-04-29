@@ -15,12 +15,17 @@ const onStart = () => {
     setBodyBgToRandom();
     intervalID = setInterval(() => setBodyBgToRandom(), 1000);
     startBtn.disabled = "disabled";
+    stopBtn.disabled = "";
 };
 
 const onStop = () => { 
     clearInterval(intervalID);
+    intervalID = 0;
     startBtn.disabled = "";
+    stopBtn.disabled = "disabled";
 };
+
+stopBtn.disabled = "disabled";
 
 startBtn.onclick = onStart;
 stopBtn.onclick = onStop;
